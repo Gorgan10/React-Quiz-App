@@ -29,7 +29,8 @@
 }
 
 .success {
-    background: rgba(161, 240, 69, 1);
+    /*background: rgba(161, 240, 69, 1);*/
+    background: rgb(144, 210, 57);
 }
 
 .primary {

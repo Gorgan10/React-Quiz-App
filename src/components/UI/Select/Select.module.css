@@ -1,0 +1,25 @@
+.Select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.Select label {
+    margin: 0 0 3px 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.Select select {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.Select select:focus-visible {
+    border: none;
+}

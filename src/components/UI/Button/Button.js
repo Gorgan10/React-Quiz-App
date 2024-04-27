@@ -9,7 +9,7 @@ const Button = (props) => {
 
   return (
     <button
-      onClick={props.onClick ? () => props.onClick() : undefined}
+      onClick={props.onClick ? (e) => props.onClick(e) : undefined}
       className={classes.join(' ')}
       disabled={props.disabled}
     >

@@ -1,0 +1,54 @@
+.QuizCreator {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    flex-grow: 1;
+    width: 100%;
+    /*background: linear-gradient(250deg, #f0613c 0%, #f0783c 100%);*/
+    /*background: linear-gradient(250deg, #f0613c 0%, #f0b13c 100%);*/
+    background: linear-gradient(250deg, #f0613c 0%, #f0b13c 50%, #ea4e4e 100%)
+}
+
+.QuizCreator > div {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    align-self: flex-start
+}
+
+.QuizCreator h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.QuizCreator form {
+    display: flex;
+    flex-direction: column;
+}
+
+.QuizCreator form > hr {
+    margin: 15px 55px;
+    width: 80%;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    margin: 0;
+    color: #fff;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}

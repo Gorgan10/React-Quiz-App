@@ -1,0 +1,59 @@
+.Auth {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    flex-grow: 1;
+    width: 100%;
+    /*background: linear-gradient(270deg, #72b7a7 0%, #59bfef 100%);*/
+    background: linear-gradient(250deg, #7b7eb6 0%, #7db789 50%, rgba(39, 104, 190, 0.77) 100%);
+}
+
+.Auth > div {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.Auth h1 {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.Form button {
+    padding: 10px 15px;
+    width: 30%;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+}
+
+.Form button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+.Form h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
