@@ -36,8 +36,11 @@
     position: relative;
     padding: 0 20px 10px 20px;
     transition: opacity .3s;
+    font-weight: normal;
 }
 
 .Drawer ul li a:hover, .active {
-   opacity: .7;
+    opacity: .7;
+    color: #000;
+    font-size: 32px;
 }
