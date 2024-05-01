@@ -2,37 +2,18 @@ import React from 'react';
 import cl from './Quiz.module.css'
 import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
+import {useParams} from 'react-router-dom';
+import axios from 'axios';
+import Loader from '../../components/UI/Loader/Loader';
 
 class Quiz extends React.Component {
   state = {
-    results: {}, // {[id]: success error}
+    results: {},
     isFinished: false,
     activeQuestion: 0,
-    answerState: null, // {{[id: 'success' 'error'}}
-    quiz: [
-      {
-        id: 1,
-        question: 'What is your name?',
-        rightAnswerId: 4,
-        answers: [
-          {text: 'James', id: 1},
-          {text: 'Bob', id: 2},
-          {text: 'Arthur', id: 3},
-          {text: 'Gor', id: 4}
-        ]
-      },
-      {
-        id: 2,
-        question: 'What is your favorite color?',
-        rightAnswerId: 3,
-        answers: [
-          {text: 'Blue', id: 1},
-          {text: 'Red', id: 2},
-          {text: 'Black', id: 3},
-          {text: 'Green', id: 4}
-        ]
-      }
-    ]
+    answerState: null,
+    quiz: [],
+    isLoad: true
   }
 
   onAnswerClick = (id) => {
@@ -44,7 +25,7 @@ class Quiz extends React.Component {
     }
 
     const question = this.state.quiz[this.state.activeQuestion]
-    const results = this.state.results
+    const results = {...this.state.results}
 
     if (question.rightAnswerId === id) {
       if (!results[question.id]) {
@@ -97,29 +78,62 @@ class Quiz extends React.Component {
     })
   }
 
+  async componentDidMount() {
+    try {
+      const {data} = await axios.get(`/quiz/${this.props.id}.json`);
+      const quiz = [];
+
+      Object.keys(data).forEach(key => {
+        quiz.push({
+          id: data[key].id,
+          options: data[key].options,
+          question: data[key].question,
+          rightAnswerId: data[key].rightAnswerId
+        });
+      });
+
+      this.setState({
+        quiz,
+        isLoad: false
+      });
+
+    } catch (error) {
+      console.error("Error loading quiz:", error);
+    }
+  }
+
   render() {
     return (
       <div className={cl.Quiz}>
         <div className={cl.QuizWrapper}>
           <h1>Answer the Question</h1>
-          {this.state.isFinished
-          ? <FinishedQuiz
-              results={this.state.results}
-              quiz={this.state.quiz}
-              onRetry={this.retryHandler}
-            />
-          : <ActiveQuiz
-             answers={this.state.quiz[this.state.activeQuestion].answers}
-             question={this.state.quiz[this.state.activeQuestion].question}
-             onAnswerClick={this.onAnswerClick}
-             quizLenth={this.state.quiz.length}
-             quetionNumber={this.state.activeQuestion + 1}
-             status={this.state.answerState}
-           />}
+
+          {
+            this.state.isLoad
+            ? <Loader/>
+            : this.state.isFinished
+                ? <FinishedQuiz
+                  results={this.state.results}
+                  quiz={this.state.quiz}
+                  onRetry={this.retryHandler}
+                />
+                : <ActiveQuiz
+                    answers={this.state.quiz[this.state.activeQuestion].options}
+                    question={this.state.quiz[this.state.activeQuestion].question}
+                    onAnswerClick={this.onAnswerClick}
+                    quizLength={this.state.quiz.length}
+                    questionNumber={this.state.activeQuestion + 1}
+                    status={this.state.answerState}
+                  />
+          }
         </div>
       </div>
     )
   }
 }
 
-export default Quiz;
+export default function QuizWrapper(props) {
+  const {id} = useParams()
+
+  return <Quiz {...props} id={id} />
+}
