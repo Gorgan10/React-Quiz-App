@@ -7,6 +7,7 @@ const Answer = (props) => {
   if (props.status) {
     classes.push(cl[props.status])
   }
+  console.log('answers', props.answer.id)
 
   return (
     <li className={classes.join(' ')} onClick={() => props.onAnswerClick(props.answer.id)}>

@@ -36,7 +36,10 @@
 
 .Input.invalid label {
     color: #f01f30;
-    /*text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);*/
+}
+
+.Input.invalid input{
+    border: 3px solid #f01f30;
 }
 
 .Input span {

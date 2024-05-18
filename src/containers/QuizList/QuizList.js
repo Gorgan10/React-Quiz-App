@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import cl from './QuizList.module.css'
 import {NavLink} from 'react-router-dom';
-import axios from 'axios';
 import Loader from '../../components/UI/Loader/Loader';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchQuizzes} from '../../store/slices/quizListSlice/quizList.slice';
 
-class QuizList extends React.Component {
-  state = {
-    quizList: [],
-    isLoad: true
-  }
+const  QuizList = () => {
+  const {quizList, loadingState} = useSelector(state => state.quizList)
+  const dispatch = useDispatch()
 
-  renderQuizList = () => {
-    return this.state.quizList.map((quiz) => {
+  useEffect(() => {
+    dispatch(fetchQuizzes());
+  }, [dispatch]);
+
+  const renderQuizList = () => {
+    return quizList.map((quiz) => {
       return (
         <li key={quiz.id}>
           <NavLink to={`/quiz/${quiz.id}`}>{quiz.name}</NavLink>
@@ -20,43 +23,14 @@ class QuizList extends React.Component {
     })
   }
 
-  async componentDidMount() {
-    try {
-      const {data} = await axios.get('/quiz.json')
-      const quizList = []
-
-      Object.keys(data).forEach((key, index) => {
-        quizList.push({
-          id: key,
-          name: `Quiz ${index + 1}`
-        })
-      })
-
-      this.setState({
-        quizList,
-        isLoad: false
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  render() {
     return (
       <div className={cl.QuizList}>
         <div>
           <h1>List of Quiz</h1>
-
-          {this.state.isLoad
-            ? <Loader />
-            : <ul>
-                {this.renderQuizList()}
-              </ul>
-          }
+          {loadingState === 'loading' ? <Loader /> : <ul>{renderQuizList()}</ul>}
         </div>
       </div>
     );
-  }
 }
 
 export default QuizList;
