@@ -57,3 +57,9 @@
     justify-content: space-around;
     box-sizing: border-box;
 }
+
+.errorMessage {
+    color: #f01f30;
+    padding: 0;
+    margin: 0;
+}

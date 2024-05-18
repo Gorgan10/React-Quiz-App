@@ -1,39 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import cl from './Layout.module.css'
 import MenuToggle from '../../components/Navigation/MenuToggle/MenuToggle';
 import Drawer from '../../components/Navigation/Drawer/Drawer';
+import {useSelector} from 'react-redux';
 
-class Layout extends React.Component {
+const Layout = ({children}) => {
+  const {isAuthenticated} = useSelector(state => state.auth)
+  const [menuState, setMenuState] = useState(false)
 
-  state = {
-    menu: false
-  }
-  toggleMenuHandler = () => {
-    this.setState({
-      menu: !this.state.menu
-    })
-  }
+  const toggleMenuHandler = () => setMenuState(!menuState);
+  const closeMenuHandler = () => setMenuState(false);
 
-  render() {
     return (
       <div className={cl.Layout}>
 
         <Drawer
-          isOpen={this.state.menu}
-          onClose={this.toggleMenuHandler}
+          onClose={closeMenuHandler}
+          isOpen={menuState}
+          isAuthenticated={isAuthenticated}
         />
 
         <MenuToggle
-          onToggle={this.toggleMenuHandler}
-          isOpen={this.state.menu}
+          onToggle={toggleMenuHandler}
+          isOpen={menuState}
         />
 
         <main>
-          { this.props.children }
+          { children }
         </main>
       </div>
     )
-  }
 }
 
 export default Layout;

@@ -9,7 +9,7 @@ const Input = (props) => {
   const classes = [cl.Input]
   const htmlFor = `${props.type || 'text'}-${Math.random()}`
 
-  if (isInvalid(props)) {
+  if (isInvalid(props) || props.error === 'Authentication failed') {
     classes.push(cl.invalid)
   }
 
