@@ -19,8 +19,7 @@ ReactQuizApp is a Single Page Application (SPA) built with React, aimed at provi
 - **Redux (Redux Toolkit)**: For state management.
 - **React Router**: For handling routing within the application.
 - **Axios**: For making HTTP requests to the backend.
-- **Sass**: For styling the application.
-- **Webpack**: For bundling and optimizing the code.
+- **Webpack**: For bundling and optimizing the code, enabling modular styling with CSS modules.
 - **Jest**: For writing unit tests and ensuring code quality.
 
 ## Project Goal
