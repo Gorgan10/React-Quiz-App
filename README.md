@@ -10,6 +10,7 @@ Quiz App is a Single Page Application (SPA) built with React, aimed at providing
 
 - **Create and Take Quizzes**: Users can create quizzes. They can also take quizzes and get instant feedback on their answers.
 - **User Authentication**: The app includes user authentication, allowing users to sign up, log in, and manage quizzes.
+- **Auto Login and Auto Logout**: Implemented to enhance user experience by automatically logging users in or out based on their session status.
 - **Results Tracking**: Users can track their quiz results and see statistics.
 - **Responsive and Modern Design**: The user interface is designed to be responsive and user-friendly, providing an intuitive experience across different devices.
 
@@ -24,4 +25,4 @@ Quiz App is a Single Page Application (SPA) built with React, aimed at providing
 
 ## Project Goal
 
-The goal of this project was to enhance my skills in React and modern web development practices. Through building the Quiz App, I aimed to deepen my understanding of state management with Redux, improve my proficiency with React Router, and practice making efficient API requests with Axios. This project is a learning endeavor to become more adept at developing comprehensive web applications. I have successfully completed the training and am now confident in my ability to use this technology.
+The goal of this project was to enhance my skills in React and modern web development practices. Through building the Quiz App, I aimed to deepen my understanding of state management with Redux, improve my proficiency with React Router, and practice making efficient API requests with Axios. Implementing features like auto-login and auto-logout provided a smoother user experience. This project is a learning endeavor to become more adept at developing comprehensive web applications. I have successfully completed the training and am now confident in my ability to use this technology.
