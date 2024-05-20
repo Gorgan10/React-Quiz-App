@@ -1,10 +1,10 @@
-# ReactQuizApp
+# Quiz App
 
 This project is a quiz application developed using React, Redux (with Redux Toolkit), React Router, Axios, and Sass.
 
 ## Description
 
-ReactQuizApp is a Single Page Application (SPA) built with React, aimed at providing an interactive and engaging way for users to take quizzes. The application features a robust state management system using Redux Toolkit and employs React Router for seamless navigation between different sections of the app. Axios is used for handling HTTP requests, and the styling is done using Sass for modular and maintainable CSS.
+Quiz App is a Single Page Application (SPA) built with React, aimed at providing an interactive and engaging way for users to take quizzes. The application features a robust state management system using Redux Toolkit and employs React Router for seamless navigation between different sections of the app. Axios is used for handling HTTP requests, and the styling is done using Sass for modular and maintainable CSS.
 
 ## Functionality
 
@@ -24,4 +24,4 @@ ReactQuizApp is a Single Page Application (SPA) built with React, aimed at provi
 
 ## Project Goal
 
-The goal of this project was to enhance my skills in React and modern web development practices. Through building ReactQuizApp, I aimed to deepen my understanding of state management with Redux, improve my proficiency with React Router, and practice making efficient API requests with Axios. Additionally, styling the application with Sass helped me to create a modular and maintainable codebase. This project is a learning endeavor to become more adept at developing comprehensive web applications.
+The goal of this project was to enhance my skills in React and modern web development practices. Through building the Quiz App, I aimed to deepen my understanding of state management with Redux, improve my proficiency with React Router, and practice making efficient API requests with Axios. Additionally, styling the application with Sass helped me to create a modular and maintainable codebase. This project is a learning endeavor to become more adept at developing comprehensive web applications.
