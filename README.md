@@ -24,4 +24,4 @@ Quiz App is a Single Page Application (SPA) built with React, aimed at providing
 
 ## Project Goal
 
-The goal of this project was to enhance my skills in React and modern web development practices. Through building the Quiz App, I aimed to deepen my understanding of state management with Redux, improve my proficiency with React Router, and practice making efficient API requests with Axios. Additionally, styling the application with Sass helped me to create a modular and maintainable codebase. This project is a learning endeavor to become more adept at developing comprehensive web applications.
+The goal of this project was to enhance my skills in React and modern web development practices. Through building the Quiz App, I aimed to deepen my understanding of state management with Redux, improve my proficiency with React Router, and practice making efficient API requests with Axios. This project is a learning endeavor to become more adept at developing comprehensive web applications. I have successfully completed the training and am now confident in my ability to use this technology.
